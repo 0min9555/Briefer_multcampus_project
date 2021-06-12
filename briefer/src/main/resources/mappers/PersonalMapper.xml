@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.threecircuit.briefer.dao.IPersonalDAO">
+  		<resultMap type="com.threecircuit.briefer.model.PersonalVO" id="perResult">
+  			<result property="cont_id" column="cont_id"/>
+  			<result property="cust_id" column="cust_id"/>
+  			<result property="value1" column="value1"/>
+  			<result property="value2" column="value2"/>
+  			<result property="value3" column="value3"/>
+  			<result property="value4" column="value4"/>
+  			<result property="value5" column="value5"/>
+  		</resultMap>
+  		<resultMap type="hashMap" id="hashResult">
+  			<result property="id" column="id"/>
+  			<result property="title" column="title"/>
+  		</resultMap>   
+  		<select id="getContentsList" resultMap="hashResult">
+  			<![CDATA[
+  				select id,title from content_info where id in ('LIF002','LIF003','FIN001','TRD001','SPO001','TRD006') order by ord
+  			]]>
+  		</select>
+		<select id="getContentsListAll" resultMap="hashResult">
+  			<![CDATA[
+  				select id,title from content_info where ord !=0 order by ord
+  			]]>
+  		</select>
+  		<select id="getPersonalInfo" resultMap="perResult" parameterType="hashmap">
+  			<![CDATA[
+  				select cust_id,cont_id,value1,value2,value3,value4,value5 from personal_info where cust_id=#{cust_id} and cont_id=#{cont_id}
+  			]]>
+  		</select>
+  		<select id="getPersonalList" resultMap="perResult">
+  			<![CDATA[
+  				select cust_id,cont_id,value1,value2,value3,value4,value5 from personal_info order by update_date desc 
+  			]]>
+  		</select>
+  		<insert id="insertPersonalInfo" parameterType="com.threecircuit.briefer.model.PersonalVO">
+  			<![CDATA[
+				INSERT INTO personal_info(cust_id,cont_id,value1,value2,value3,value4,value5,createdate,updatedate)
+				VALUES (#{cust_id},#{cont_id},#{value1},#{value2},#{value3},#{value4},#{value5},now(),now())
+			]]>
+		</insert>
+		<update id="updatePersonalInfo" parameterType="com.threecircuit.briefer.model.PersonalVO">
+			<![CDATA[
+  			UPDATE personal_info
+  			SET value1=#{value1}, value2=#{value2},value3=#{value3},value4=#{value4},value5=#{value5},updatedate=now() WHERE cust_id=#{cust_id} and cont_id=#{cont_id}
+  			]]>	   	
+  		</update>
+  		
+  		
+ 
+  </mapper>
+  
+  
+  

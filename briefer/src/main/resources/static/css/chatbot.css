@@ -1,0 +1,161 @@
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   
+}
+.panel-body {
+	background-color: rgb(255, 255, 255);
+}
+
+.chat li
+{
+	
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+   /*  border-bottom: 1px dotted #B3A9A9; */
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+    
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+     
+}
+
+
+.chat li .chat-body p
+{
+	  
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+   
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 500px;
+    
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+.msgBox > span {padding:3px 5px; word-break:break-all; display:block; 
+							 max-width:450px; margin-bottom: 10px; border-radius: 10px}
+.msgBox.send > span {background:rgb(255, 223, 140); float:right;}
+.msgBox.receive > span {background:rgb(229, 229, 229); float:left;}
+
+.left .recBox > p  {
+ 	padding:3px 5px; 
+	word-break:break-all;
+	 display:block; 
+	max-width:450px; 
+	margin-bottom: 10px;
+	 border-radius: 10px;
+ 	background:rgb(221, 221, 221);
+ 	 float:left;
+     position: relative;
+   	margin-top: 10px;
+   	margin-left: 5px;
+    
+}
+.right .sendBox > p  {
+	padding:3px 5px; 
+	word-break:break-all;
+	 display:block; 
+	max-width:450px; 
+	margin-bottom: 10px;
+	 border-radius: 10px;
+ 	background:#1CB177;
+ 	color : white;
+ 	 float:right;
+ 	 margin-top: 10px;
+ 	 margin-right: 5px;
+}
+
+.panel-default > .panel-heading {
+  color: #FFFFFF;
+  background-color: #04AA6D;
+  border-color: #ddd;
+}
+.btn-success {
+     /* font-weight: bold; */
+     background-color:  #04AA6D;
+     width :100px;
+}
+
+#shortcut {
+	/*   display: flex; */
+  justify-content: center; 
+   align-items: center; 
+   
+}
+
+.sp {
+	
+	float : right;
+	 margin-top: 5px;
+}
+
+.fa-volume-mute {
+	
+	/* background:#ffffff; */
+ 	color :  #04AA6D;
+ 	
+}
+
+
+.fa-volume-up {
+	
+	/* background:#ffffff; */
+ 	color :  #04AA6D;
+ 	
+}
+.bi-mic-mute-fill {
+	color :  rgb(192, 192, 192);
+	
+}
+.bi-mic-fill {
+	color :  rgb(225, 0, 56);
+}
+
+.bi-volume-mute-fill {
+	color :  rgb(192, 192, 192);
+}
+
+.bi-volume-up-fill {
+	color :  rgb(0, 0, 0);
+}
+
+.input-group-btn {
+	 padding:5px;
+}
+
